@@ -3,11 +3,56 @@
    "how to change link color." */
 
 body {
-  background-color: white;
-  color: black;
-  font-family: Verdana;
+  background-color: #efefef;
+  color: #3f3f3f;
+  font-family: 'Hoefler Text', 'Baskerville Old Face', Garamond, 'Times New Roman', serif;
   max-width: 700px;
   margin: 0 auto;
   height: 100%;
   padding: 10px;
+}
+
+.header-img {
+  max-width: 700px;
+}
+
+.instagram-photo {
+  width: 700px;
+  max-width: 700px;
+}
+
+.instagram-photo-half {
+  width: 50%;
+  max-width: 345px;
+  padding-right: 5px;
+  float: left;
+}
+
+.img-float-right {
+  width: 200px;
+  float: right;
+  margin: 5px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+h1 {
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #95956e;
+}
+
+a {
+  color: #5B97A6;
+}
+
+a:visited {
+  color: #4b7d89;
+}
+
+a:hover {
+  color: #5B97A6;
 }
