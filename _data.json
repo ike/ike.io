@@ -1,0 +1,30 @@
+{
+  "about": {
+    "title": "About Isaac",
+    "description": "Isaac Lewis, Renaissance Kid"
+  },
+  "index": {
+    "title": "Isaac's Internet Homestead",
+    "description": ""
+  },
+  "domains": {
+    "title": "Have you found what you're looking for?",
+    "description": "The domain you were looking for is probably from an old pipedream; free to a good home."
+  },
+  "gifs": {
+    "title": "gïƒ$",
+    "description": "not a robot; not a sandwich; not for sale"
+  },
+  "notes": {
+    "title": "Notes",
+    "description": "stream of conciousness; good links"
+  },
+  "zlog": {
+    "title": "quote blog unquote",
+    "description": "opinions will be yours"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "description": "i want to believe"
+  }
+}

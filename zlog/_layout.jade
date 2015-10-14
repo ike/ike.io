@@ -1,0 +1,12 @@
+doctype
+html
+  head
+    meta(charset="UTF-8")
+    title= title
+    meta(name="description" content="#{ description }")
+    link(href="../style.css", rel="stylesheet", type="text/css", media="all")
+  body
+      != yield
+
+    a(href="../blog.html")
+      small &#9756; "blog" home

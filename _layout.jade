@@ -1,0 +1,44 @@
+doctype
+html
+  head
+    meta(charset="UTF-8")
+    title= title
+    meta(name="description" content="#{ description }")
+    link(href="style.css", rel="stylesheet", type="text/css", media="all")
+  body
+      != yield
+    #footer
+      hr.clearfix
+      nav.center
+        a(href="/")
+          b home
+        span  &#151; 
+        a(href="about.html")
+          b about
+        span  &#151; 
+        a(href="notes.html")
+          b notes
+        span  &#151; 
+        a(href="blog.html")
+          b "blog"
+        span  &#151; 
+        a(href="cv.html")
+          b cv
+        span  &#151; 
+        a(href="mailto:isaac@ike.io")
+          b isaac@ike.io
+        
+        br
+        br
+
+        a(href="http://twitter.com/_crossdiver") Twitter
+        span  &#151; 
+        a(href="http://github.com/ike") Github
+        span  &#151; 
+        a(href="http://last.fm/user/ikelewis678") last.fm
+        span  &#151; 
+        a(href="/pgp.asc") PGP
+        span  &#151; 
+        a(href="http://crossdiver.tumblr.com") tumblr
+        span  &#151; 
+        a(href="gifs.html") gïƒ$
