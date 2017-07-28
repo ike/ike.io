@@ -29,6 +29,9 @@
 *   [gth](ggth.gif)
 *   [ukelelelele](g/ukelelelele.gif)
 *   [internet](g/internet.gif)
+*   [maaaaybe](g/maaaaaybe.gif)
+*   [car wash](g/car_wash.gif)
+
 
 <script>tinysort('ul>li');</script>
     

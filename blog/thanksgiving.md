@@ -1,7 +1,3 @@
-# Thanksgiving
-
-<small>2013/11/27</small>
-
 > “…And we pray, not for new  
 > earth or heaven, but to be quiet  
 > in heart, and in eye clear.  

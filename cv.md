@@ -1,115 +1,67 @@
-## CV / Resumé
+# Isaac Lewis CV
 
-### Profile
+541-705-5427 | isaac@ike.io
 
-Leapfrog is my favorite contact sport. Puffin watching on the cliffs of Spruce Island Alaska is what I would choose to do on vacation. I play with the web in between.
+## Profile
+I am an aspiring Renaissance man. I believe that a diversity of interests and endeavors creates opportunities to do great things. I strive to constantly challenge myself and learn, and bring those experiences to whatever I do. As a technologist moving into the unknown territory of our future, I am here to provide an enthusiastic, reasoned voice that is backed by a wide range of perspectives and a desire to solve real human problems with technology. I am most inspired by a work environment that requires a diverse set of skills. As a manager, I endeavor to inspire individual responsibility, while providing the context and tools for success.
 
-The most important thing I’ve learned is that technology moves too fast, and the best skill one can have in this field is the ability to adapt to whatever task is at hand, and use unfamiliar territory and yerba mate as rocket fuel…
+## Current Roles
+### Founder, Afterimage; Richland, WA — 2016-Present
+I founded Afterimage after seeing a need for an extensible CMS for public displays. Afterimage is a web-based software and hardware solution for easily managing content on TVs, projectors, and other screens. We make it easy to manage screens across multiple locations, with a wide range of content, and offer a platform to extend your screens with custom functionality.
 
-### Education
+### Senior Software Developer, Development Lead, Wildland; Richland, WA — 2016-Present
+I joined Wildland in March of 2016 as a Senior Software Developer. I have been building large full-stack business-data applications, leading project architecture design, leading project teams as a Developer Lead, and assisting sales with project estimates.
 
-Self-taught. I believe in an auto-didactic proletariat.
+## Past Roles
+### Business Development Lead, &yet; Richland, WA — 2014-2015
+In November 2014, I moved from front-end development to business development, a brand-new department for &yet. I diversified our client portfolio and developed a product strategy for the company, clarifying and solidifying our position as a product development consultancy.
 
-### Skills / Setup
+### Founder, Producer, MUX; Richland, WA — 2013-2015
+Seeing a large gap in Richland’s nightlife, I founded MUX, an indie rock venue that creates big-city musical experiences once a month in a restored 1950s cinema. I envisioned our “sound” and experience, booked bands, managed logistics, and created an operational board that continues to operate the venue today.
 
-Skills:  
-- Event coordination  
-- High-stakes brainstorming  
-- s/brain/barn  
-- Goatherding  
-- Single-page app creation  
-- “%$&*#@ CRUSHING IT”*  
-- Music Talent Buying
+### Front-end Web Developer, &yet; Richland, WA — 2013-2014
+I joined &yet in early 2013 as a front-end developer, building complex business applications in Javascript. I worked under Henrik Joreteg, and was one of the initial implementers of Human Javascript (Ampersand.js) in an application. Later, I was the Project Manager for a client project, managing and contributing to development.
 
-<small>* _Direct client feedback_</small>
+### Web Development PM, CGCC; The Dalles, OR — 2011-2013
+I worked for Columbia Gorge Community College migrating their website from an Adobe Cold Fusion/Contribute based system to Drupal. I assembled a team of driven people from across the campus, and together with an outside contractor, we planned out and implemented a two-year conversion that included over thirty individual development projects, thousands of web documents, and a complete design and brand overhaul for the college.
 
-Tools:  
-- Git + github  
-- Photoshop  
-- Sketchup/Layout  
--
+### Freelance Web Developer; Goldendale, WA — 2007-2011
+I ran my own Wordpress agency, building and designing blogs and portfolio sites for local business and individuals.
 
-Frameworks:  
-- Backbone  
-- Human Javascript  
-- SimpleWebRTC  
-- Underscore  
-- jQuery  
-- Moment  
-- Moonboots  
-- Ampersand.js  
-- Wordpress  
-- Magento  
-- Bootstrap
+## Volunteering
 
-### Work Experience
+### Chair, Communities in Schools of Benton Franklin; Richland, WA — 2016-Present
+Communities in Schools is a leading national dropout prevention program that helps match kids and families with resources that already exist within their community. Our local affiliate is one of the fastest growing affiliates in the nation.
 
-#### MUX, Richland WA, 2014 - present
+### Communications Specialist, Klickitat County Search and Rescue; Goldendale, WA — 2011-2015
+I worked as a Communications Specialist for the Monastery Complex Fire 2011 and the Mile Marker 28 Fire of 2013. I also worked as a Field Certified volunteer on numerous SAR missions, including rescues, evacuations, perimeter security, and public demonstrations. NIMS IS-700, Helicopter Recovery training, Field Radio Repeater Operation.
 
-_Producer, Talent Buyer_
+## Education
+I am an autodidact. After graduating high school, I designed my own college program out of various available resources including CLEP testing, an extensive reading program, and MOOCs from Stanford and MIT. I am dedicated to continuing this practice throughout my life.
 
-In February 2014, I started MUX, a local eclectic concert venue in Richland WA. [MUX.tc](http://mux.tc)
+## Skills
+**Front-end Web Development**: Backbone, Node.js, Ampersand.js, WebRTC, Meteor, React, Bootstrap, Hapi, Express, Git, Photoshop.
 
-#### &yet, Richland WA, 2013 - present
+**Business Development**: sales, negotiation, product strategy, market research.
 
-_Node Hobbit_
+**Project Management**: team-building, project strategy, budgeting and allocation, agile scrum, volunteer coordination, client relationship management.
 
-I now work for [&yet](http://andyet.com), a web development consultancy based in Eastern Washington. We do things like [putting on conferences](http://realtimeconf.com), writing [open](https://github.com/fritzy/pie)-[web](https://github.com/HenrikJoreteg/SimpleWebRTC) [tools](https://github.com/legastero/stanza.io), and building [awesome apps](http://andbang.com). You should read about our [team](http://andyet.com/team).
+**Event Management**: logistics, a/v production and design, volunteer coordination, scheduling, stage management, sponsorship coordination.
 
-#### Columbia Gorge Community College, The Dalles OR, 2011 - 2013
+## Interests
+- Distributed applications, federation, and the independent web
+- Search and Rescue. Field Certification; NIMS IS-700; Ham Radio license
+- Electric car retrofitting and software programming
+- Renewable Energy industry applications
+- Farming and forestry
 
-_Web Project Manager_
+## Achievements
+- Winner, Best App in Transportation, ReInvent Green NYC, 2012
+- Buspreneur on the Las Vegas StartupBus 2012
+- Winner, Google Chrome Developer Challenge, Google I/O 2011
+- Second Place in the Google HTML5 Hackathon Seattle
+- Junior Business Plan Contest Runner Up, Entrepreneurial Bootcamp, 2006
 
-I worked for [Columbia Gorge Community College](http://cgcc.edu) as their Web Development Project Manager for just over a year. We were migrating their website from an Adobe Cold Fusion/Contribute based system (!!!) over to Drupal. I was able to assemble a fabulous team of driven people from across the campus, and together with an outside contractor (Insite Web Publishing), we planned out a two-year conversion that included over thirty individual development projects, thousands of web documents, and a complete design and brand overhaul for the college.
+* * *
 
-Some of my responsibilities:  
-- Manage 30+ projects on a two-year timescale. Coordinate ~25 team members and contributors.  
-- Implement social media and augmented reality systems for student interaction.  
-- Create new web apps for specific business processes as needed and as time and resources allow.  
-- Maintain and improve all web assets, including LMS system, SSO and student Google Apps.
-
-#### Self-Employed, Goldendale WA, 2008 - 2011
-
-_Owner, Draftsman_
-
-*   Working as a Sketchup draftsman in the solar industry, designing solar systems and modeling them for clients like the Department of Energy and various local counties, municipalities and companies.
-*   Maintaining a small business network of 9 cross-platform workstations and two servers.
-*   Building corporate websites for clients.
-*   Staying abreast of the frontend, JS and mobile web development world.
-
-#### Seraphim Energy, Goldendale WA, 2007
-
-_Web Designer / Electrical Apprentice / Warehouse Operations Coordinator_
-
-*   Built a corporate website from scratch, and maintained it for 2.5 years. It included a detailed, multi-page information request form with file upload, etc. This was my first web design project.
-*   Solar and small wind turbine installations, inverter programming and configuration.
-
-#### Volunteer, Benefit Dinner Committee, 2007 - present
-
-_Web Design / Graphic Print Design / Volunteer Manager / Auction Operations Manager_
-
-*   Designed all promotional materials and coordinated printing.
-*   Managed the 30+ volunteers at the event.
-*   Coordinated the silent auction operations and acquisition.
-
-### Interests
-
-*   Search and Rescue, Field certified member / Ham Radio license.
-*   Electric Car retrofitting and software programming.
-*   App development for the Renewable Energy industry.
-*   Intelligent, Future-friendly web and mobile application development.
-
-### Achievements
-
-*   Winner, Best App in Transportation, ReInvent Green NYC, 2012
-*   Buspreneur on the Las Vegas StartupBus 2012
-*   Winner, Google Chrome Developer Challenge, Google I/O 2011
-*   Second Place in the Google HTML5 Hackathon Seattle
-*   Junior Business Plan Contest Runner Up, Entrepreneurial Bootcamp, 2006
-
-### References
-
-*   Jonathan Lewis, 541-705-5188, [jlewis@hireelectric.com](mailto:jlewis@hireelectric.com), PO Box 662, Goldendale, WA, 98620
-*   Michal Kawka, 541-506-6022, [fiszka11@gmail.com](mailto:fiszka11@gmail.com)
-*   Wade Myers, 931-994-2526, [newventurelab@gmail.com](mailto:newventurelab@gmail.com), PO Box 157, Centerville, TN, 37033
-*   Jeff King, 509-773-4390, [JeffK@co.klickitat.wa.us](mailto:JeffK@co.klickitat.wa.us), 205 S. Columbus Ave., Room 108, MS-CH-7, Goldendale, WA 98620
+Please email me for references: [isaac@ike.io](mailto:isaac@ike.io)

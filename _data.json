@@ -5,7 +5,8 @@
   },
   "index": {
     "title": "Isaac's Internet Homestead",
-    "description": ""
+    "description": "",
+    "layout": "_index.jade"
   },
   "domains": {
     "title": "Have you found what you're looking for?",
@@ -26,5 +27,12 @@
   "cv": {
     "title": "Curriculum Vitae",
     "description": "i want to believe"
+  },
+  "hire": {
+    "title": "Hire Isaac Lewis",
+    "description": "I think your project is amazing -- let's talk!"
+  },
+  "feed": {
+    "layout": false
   }
 }

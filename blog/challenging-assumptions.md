@@ -1,7 +1,3 @@
-# Challenging our assumptions
-
-<small>2014/07/29</small>
-
 Lately, I’ve been busy.
 
 I currently run [MUX](http://mux.tc), a local music venue in Richland Wa. We focus on regional and local independent music, producing between one and three shows a month. I’ve been learning a ton – not only about the music industry, booking, production, and promotion, but about myself.

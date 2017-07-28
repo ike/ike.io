@@ -1,7 +1,3 @@
-# Humility
-
-<small>2014/10/09</small>
-
 For the record, I'm still learning how to do this whole "life" thing.
 
 Recently, I made the really invigorating discovery that I can be a grade-A asshole while simultaneously thinking that I am *helping* those around me.

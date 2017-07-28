@@ -1,7 +1,3 @@
-# The Great West Coast Roadtrip, 2015
-
-<small>2015/08/14</small>
-
 <img class="instagram-photo" src="https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/11202630_503546673143864_1203573124_n.jpg" />
 
 <iframe style="float:right; margin:5px;" width="230px" height="500px" frameborder="0" src="https://a.tiles.mapbox.com/v4/crossdiver.n63nm5en/attribution.html?access_token=pk.eyJ1IjoiY3Jvc3NkaXZlciIsImEiOiJpQlF3WGV3In0.rZKUegXlMMHHTeV9xA-RJw"></iframe>

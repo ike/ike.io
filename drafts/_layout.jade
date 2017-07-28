@@ -1,0 +1,35 @@
+doctype
+html
+  head
+    meta(charset="UTF-8")
+    title= title
+    meta(name="description" content="#{ description }")
+    link(href="../style.css", rel="stylesheet", type="text/css", media="all")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="alternate", type="application/rss+xml",  href="http://www.ike.io/feed.xml")
+
+    link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js")
+
+  body
+      nav
+        #nav-container
+          div.nav-item
+            a(href="../index.html")
+              b ike.io
+          div.nav-item
+            a(href="../blog.html")
+              b blog
+
+      h3 DRAFT
+      h1.post-title= title
+      pre.post-title= date
+      != yield
+    script
+    | hljs.configure({languages: []})
+    | hljs.initHighlightingOnLoad();
+    | var x = document.querySelectorAll("code");
+    | var i;
+    | for (i = 0; i < x.length; i++) {
+    |     hljs.highlightBlock(x[i]);
+    | }
