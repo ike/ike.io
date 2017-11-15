@@ -1,0 +1,210 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Ike.io</title><meta name="description" content="Isaac Lewis's Internet Homestead"><link href="style.css" rel="stylesheet" type="text/css" media="all"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="alternate" type="application/rss+xml" href="http://www.ike.io/feed.xml"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script></head><body><nav><div id="nav-container"><div class="nav-item"><a href="index.html"><b>home</b></a></div><div class="nav-item"><a href="hire.html"><b>hire</b></a></div><div class="nav-item"><a href="blog.html"><b>blog</b></a></div><div class="nav-item"><a href="cv.html"><b>cv</b></a></div><hr class="nav-rule"><div class="nav-item-small nav-item"><a href="http://twitter.com/_crossdiver" rel="me">Twitter</a></div><div class="nav-item-small nav-item"><a href="http://github.com/ike" rel="me">Github</a></div><div class="nav-item-small nav-item"><a href="http://last.fm/user/ikelewis678" rel="me">last.fm</a></div><div class="nav-item-small nav-item"><a href="pgp.asc" rel="me">PGP</a></div><div class="nav-item-small nav-item"><a href="http://crossdiver.tumblr.com" rel="me">tumblr</a></div><div class="nav-item-small nav-item"><a href="gifs.html">gïƒ$</a></div></div></nav><?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Ike.io</title><link><description>Isaac Lewis's Internet Homestead</description><atom:link href="undefined/feed.xml" rel="self" type="application/rss+xml"></atom:link><item><title>Growing my own Oyster Mushrooms</title><description> 
+<![CDATA[<p>Day 2 after first sprouting:
+<img src="/blog/img/mushrooms_day_2.jpg" alt="Day 2"></p>
+<p>Day 3
+<img src="/blog/img/mushrooms_day_3.jpg" alt="Day 3"></p>
+]]></description><pubdate>Sun Feb 07 2016 00:00:00 GMT-0800 (PST)</pubdate><link>/blog/oyster-mushrooms.html<guid ispermalink="true">/blog/oyster-mushrooms.html</guid></item><item><title>Make Your Own Static Site With Harp.js</title><description> 
+<![CDATA[<p>The web has become <a href="http://eev.ee/blog/2015/09/17/the-sad-state-of-web-app-deployment/">really complicated</a>. It takes so much time, so much frustration, and so much specialized knowledge to set up a new site, blog, forum, or chatroom that many internet citizens no longer build independent experiences. It&#39;s become so simple to join an existing silo (<a href="http://tumblr.com">tumblr</a>, <a href="https://wordpress.com/">wordpress</a>, <a href="https://disqus.com/">disqus</a>, <a href="http://www.discourse.org/">discourse</a>) that we&#39;re not as likely to consider the idea of building something that&#39;s simple, clear, and completely ours.</p>
+<p>I&#39;ve been <a href="/blog/indieweb.html">involved in indieweb stuff for a while now</a>. The Indieweb is the idea that you can (and should) own your own internet persona – the data that you create online should live, primarily, on your own internet &quot;homestead&quot;. The problem is that for a long time, the internet hasn&#39;t had tools that made that easy for folks who don&#39;t have Ops Chops.</p>
+<p><img src="http://38.media.tumblr.com/c69d6a0e4d4ba681ed9045b23a8c5ee2/tumblr_inline_nvd5p9QbfH1raprkq_500.gif" alt="Dev Ops"></p>
+<p><em>Enter, Static-web Generators.</em></p>
+<p><em>[Collective Groan]</em></p>
+<p>Static web generators have really sucked. I have used tons of them, even helped build one from scratch, and I&#39;ve been disappointed miserably every time. Jekyll, Hexo, Octopress, GH Pages – all very well-intentioned tools that unfortunately kept the knowledge-barrier high enough to be frustrating for newcomers, put constraints on what was possible with your code, and lacked clear enough documentation to really help folks get started with building their own website from scratch. Le sigh. This was not fun. This was not easy.</p>
+<p><img src="http://38.media.tumblr.com/2ea9c9e091ff9c7f2fca39e7428f3255/tumblr_inline_nua9wgYYGz1raprkq_500.gif" alt="Matches"></p>
+<p>Until I discovered <a href="http://harpjs.com/">Harp.js</a>, that is.</p>
+<p>Harp is &quot;The static web server with built-in preprocessing.&quot; It <em>just works</em>. Write your site in almost anything (Jade, Markdown, EJS, CoffeeScript, Sass, LESS and Stylus), and Harp will create a clean, fast site in HTML, CSS, and JS. Presto, exactly what we&#39;re looking for.</p>
+<p>Let&#39;s dig in:</p>
+<p>[Note: this tutorial requires Node.js. If you haven&#39;t got Node.js on your computer, you can use <a href="/blog/installing-node-using-nvm.html">this guide</a> to help you get it set up.]</p>
+<hr>
+<p><strong>Installing Harp.js</strong></p>
+<p>Harp includes several components – a project builder (installation wizard to walk you through creating a static site), a compiler (compiles your templates and content into a <code>www</code> directory of HTML, CSS, and JS), and a server (to locally serve your uncompiled content, updating as you edit files). All of these components are installed with one npm module. With <a href="/blog/installing-node-using-nvm.html">Node.js installed</a>, copy and paste the following command into your Terminal application:</p>
+<pre><code class="language-sh">sudo npm install -g harp
+</code></pre>
+<p>After you type your computer&#39;s password, a progress bar will appear as all the components of Harp are downloaded and installed. Once that&#39;s finished, you can start your first static website.</p>
+<hr>
+<p><strong>Creating your Harp project</strong></p>
+<p>First, <a href="http://stackoverflow.com/questions/9547730/how-to-navigate-to-to-different-directories-in-the-terminal-mac">navigate to the directory</a> where you&#39;d like to keep your static website. Then, initialize a Harp project by typing the following in your Terminal:</p>
+<pre><code class="language-sh">harp init myproject
+</code></pre>
+<p>Replace <code>myproject</code> with the name of your static website.</p>
+<p>Check it out! It dumped some stuff into this directory! When you use the <code>harp init</code> command, it downloads some boilerplate from the Harp website, and creates the following files:</p>
+<pre><code>404.jade
+_layout.jade
+index.jade
+main.less
+</code></pre><p>Now we can spin up a local server to see our new static site. Type <code>harp server</code> into your Terminal. </p>
+<p>[Note: this is why I love Node.js. Instead of having to install php and mysql and apache, you just install Node + a few packages and we&#39;re running a local server in minutes, instead of days]</p>
+<p>Harp will tell you exactly where it is running:</p>
+<pre><code class="language-sh">------------
+Harp v0.19.0 – Chloi Inc. 2012–2015
+Your server is listening at http://localhost:9000/
+Press Ctl+C to stop the server
+------------
+</code></pre>
+<p>You should be able to navigate to <a href="http://localhost:9000/">http://localhost:9000/</a> and see your brand-new boilerplate static website.</p>
+<hr>
+<p><strong>Editing and Deployment</strong></p>
+<p>Now you can open up your project directory in your filesystem and leave the local server running in your terminal while you edit your site. The server will monitor the folder and automatically update what you change on the site. Just refresh your browser when you make an edit.</p>
+<p>You&#39;re ready to edit your static site. The boilerplate is all written in <a href="http://jade-lang.com/">Jade</a> and <a href="http://lesscss.org/">Less</a>, but you can write in almost any templating language you want, including <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, <a href="http://www.embeddedjs.com/">EJS</a>, <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://sass-lang.com/">Sass</a>, and <a href="https://learnboost.github.io/stylus/">Stylus</a>. Try creating some new documents and viewing the output HTML in your browser. Pretty magical, right?</p>
+<p>Harp has fantastic <a href="http://harpjs.com/docs/">documentation on their website</a> for <a href="http://harpjs.com/docs/development/rules">structuring your site</a>, <a href="http://harpjs.com/docs/development/layout">creating layouts</a>, <a href="http://harpjs.com/docs/development/markdown">using preprocessors like Markdown</a>, and <a href="http://harpjs.com/docs/deployment/github-pages">deploying to hosts like Github Pages</a>.</p>
+<p>Personally, I like hosting on <a href="https://neocities.org/">Neocities.org</a>, which is fantastically easy.</p>
+<p>First, we have to compile our static site into HTML, CSS, and JS. To do this, type the following in your Terminal:</p>
+<pre><code class="language-sh">harp compile
+</code></pre>
+<p>This will compile your static site into HTML, CSS, and JS in the <code>www</code> directory within your project directory.</p>
+<p>Now, to deploy my site to Neocities, I just open that <code>www</code> directory in my finder, and:</p>
+<p><img src="img/deploy-to-neocities.gif" alt="Deploying to Neocities"></p>
+<p>Deploying to Neocities is as easy as Drag&#39;n&#39;Drop™.</p>
+<hr>
+<p>I hope this tutorial was useful for you. If you have any questions, or if something doesn&#39;t work, please let me know on Twitter (<a href="http://twitter.com/_crossdiver">@_crossdiver</a>), or shoot me an email (<a href="mailto:isaac@ike.io">isaac@ike.io</a>). </p>
+<p>I am currently <a href="/hire.html">available for hire</a> if you&#39;d like any consulting or development on your static web applications.</p>
+]]></description><pubdate>Fri Nov 06 2015 00:00:00 GMT-0800 (PST)</pubdate><link>/blog/make-your-own-static-site-with-harp.html<guid ispermalink="true">/blog/make-your-own-static-site-with-harp.html</guid></item><item><title>Installing Node Using NVM</title><description> 
+<![CDATA[<p>Hi there! In this tutorial, you&#39;ll learn how to install Node.js using NVM. If you want to learn more about Node.js and why it&#39;s useful, there&#39;s a <a href="http://blog.modulus.io/top-10-reasons-to-use-node">good explaination over on the Modulus blog</a>.</p>
+<p>Let&#39;s get started!</p>
+<p>We&#39;ll be using NVM (the Node Version Manager). Not to be confused with npm (the Node Package Manager), NVM is a simple bash script to manage multiple active Node.js versions. Basically, NVM allows you to install Node.js and gives you some extra tools to be able to switch between Node.js versions if particular projects require that.</p>
+<hr>
+<p><strong>Installing NVM</strong></p>
+<p>To install NVM, we&#39;ll use <code>curl</code> to download and run an install script. (To all the security folks out there, yes, I hear you.)</p>
+<p>Copy and past the following line into your Terminal application, and hit enter.</p>
+<pre><code class="language-sh">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+</code></pre>
+<p>Now, quit and reopen your Terminal app. We need to check whether NVM was able to successfully install itself in your bash profile. Type <code>nvm</code> and hit enter. If you get an error, you&#39;ll need to add NVM to your bash profile manually.</p>
+<p>Type <code>nano .bash_profile</code>. This will open up your <code>.bash_profile</code> document. Paste the following text into your <code>.bash_profile</code> document.</p>
+<pre><code class="language-sh">. ~/.nvm/nvm.sh
+</code></pre>
+<p>Press <code>Ctrl + X</code> to save, <code>Y</code> to agree to save. Now you should be able to quit your Terminal, open it again, type <code>nvm</code>, hit enter, and see the Node Version Manager help text.</p>
+<p>YAY! </p>
+<hr>
+<p><strong>Installing Node</strong></p>
+<p>Now that we have NVM installed, we can download and install Node.js.</p>
+<p>We&#39;ll install the latest stable version. Type <code>nvm install stable</code>.</p>
+<p>You&#39;ll see a loading bar, and then </p>
+<pre><code class="language-sh">Now using node v5.0.0 (npm v3.3.6)
+</code></pre>
+<p>To test whether Node.js is <em>really truly</em> installed, type <code>node --version</code>. You should get back <code>v5.0.0</code>, with a version number corresponding to the version NVM installed.</p>
+<p>If at any time you need to use a different version of Node.js, and have installed multiple versions from NVM, just use</p>
+<pre><code class="language-sh">nvm use X.X.X
+</code></pre>
+<p>... where <code>X.X.X</code> is the version number you wish to use.</p>
+<p>Congratulations, you just installed Node.js, and have a sweet version manager to keep yourself up to date.</p>
+]]></description><pubdate>Fri Nov 06 2015 00:00:00 GMT-0800 (PST)</pubdate><link>/blog/installing-node-using-nvm.html<guid ispermalink="true">/blog/installing-node-using-nvm.html</guid></item><item><title>Minesweeper in JS</title><description> 
+<![CDATA[<p>Recently, I had to create a code sample for an interview, so I built a Minesweeper in da browser. :)</p>
+<iframe src="http://ike.io/code/minesweeper" width="100%" height="500px"></iframe>
+
+<p><a href="http://ike.io/code/minesweeper">Fullscreen it</a>!</p>
+]]></description><pubdate>Thu Oct 29 2015 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/minesweeper.html<guid ispermalink="true">/blog/minesweeper.html</guid></item><item><title>Slime Mould Sonification</title><description> 
+<![CDATA[<p>OMG. Slime mould sonification. Incredibly cool.</p>
+<blockquote>
+<p>Non-Human Rhythms 2 is the second release of a series of live recordings featuring different micro-organism and there bio-electrical activity translated into a sound process. In this release listen to 4 tracks of slime mould sonification.</p>
+</blockquote>
+<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/127718060&amp;color=00aabb&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+<p>Thanks to <a href="https://twitter.com/nervous_jessica">@nervous_jessica</a> for the link.</p>
+<p><blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">time to listen to the slime molds sing <a href="https://t.co/rZwy3N1wmE">https://t.co/rZwy3N1wmE</a> <a href="http://t.co/CcJP7AJ0Vj">pic.twitter.com/CcJP7AJ0Vj</a></p>&mdash; Jessica Rosenkrantz (@nervous_jessica) <a href="https://twitter.com/nervous_jessica/status/652197122259988480">October 8, 2015</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]]></description><pubdate>Wed Oct 28 2015 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/slime-mould.html<guid ispermalink="true">/blog/slime-mould.html</guid></item><item><title>IPFS Ahoy!</title><description> 
+<![CDATA[<p>Really, really happy to see <a href="http://neocities.org">Neocities</a> supporting <a href="http://ipfs.io">IPFS</a> now -- my site is pinned to my local machine easy as pie. Now just need to tinker with some permanent &quot;anti-server&quot; IPFS node to keep a running archive of my site physically on my desk. dance dance I&#39;m so excited.</p>
+]]></description><pubdate>Mon Sep 14 2015 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/ipfs-ahoy.html<guid ispermalink="true">/blog/ipfs-ahoy.html</guid></item><item><title>Overshare: The links.net Story</title><description> 
+<![CDATA[<iframe src="https://archive.org/embed/overshare-the_links.net_story" width="100%" height="400" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+
+<p>You could probably call Justin Hall the Godfather of the indieweb. I&#39;m like, super ashamed to admit that I only learned about him today. Here&#39;s his new documentary, where he chronicles his life on the web and off, and makes a great case for breaking out of our electronic siloes to meet eachother with kindness and gratitude. Plus, it has fantastic retro-internet vibes. Enjoy!!</p>
+]]></description><pubdate>Tue Aug 18 2015 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/overshare.html<guid ispermalink="true">/blog/overshare.html</guid></item><item><title>Mighty Tieton</title><description> 
+<![CDATA[<p>Finally stopped by the <a href="http://mightytieton.com">Mighty Tieton</a> facility in <a href="http://www.openstreetmap.org/?mlat=46.70460&amp;mlon=-120.75450#map=17/46.70460/-120.75450">Tieton, WA</a>. I&#39;ve heard about their ambitious community-building and local development projects for years, but never really had a good sense of the scale or polish that&#39;s gone into their operation. Located in a tiny town of 1,200, their main facility (a 1960&#39;s fruit packing plant) houses entrepreneurial endeavors, art galleries, permanent installations, and a shipping and fulfillment center for locally-produced products. They also host and coordinate local events, large gatherings, and musical concerts. Keep an eye on these folks, and meet them if you can.</p>
+]]></description><pubdate>Tue Aug 18 2015 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/mighty-tieton.html<guid ispermalink="true">/blog/mighty-tieton.html</guid></item><item><title>The Great West Coast Roadtrip 2015</title><description> 
+<![CDATA[<p><img class="instagram-photo" src="https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/11202630_503546673143864_1203573124_n.jpg" /></p>
+<iframe style="float:right; margin:5px;" width="230px" height="500px" frameborder="0" src="https://a.tiles.mapbox.com/v4/crossdiver.n63nm5en/attribution.html?access_token=pk.eyJ1IjoiY3Jvc3NkaXZlciIsImEiOiJpQlF3WGV3In0.rZKUegXlMMHHTeV9xA-RJw"></iframe>
+
+<p>My wife, <a href="http://twitter.com/the_lewist">Sarah</a>, and I had never taken a &quot;real&quot; roadtrip together.</p>
+<p>I like to think that a year-long period of driving bi-weekly between my Eastern Washington desert and her Emerald City sound counted for something, but one thing it didn&#39;t count for was an expansive, we&#39;re-out-of-audiobooks-and-cell-reception West Coast experience. So we set out to correct that no later than six months into our marriage.
+Road trips offer fantastic perspective
+We booked our way south from Richland, WA (our home-base for the present), and made it to a friends&#39; place in Winters, CA by dinnertime. Skipping San Francisco, we drove south along the central California Coast, popping off the 101 at Morro Bay (great spot -- we&#39;d love to spend some time there). We spent about four days in Solana Beach, and then headed up the east side of CA, NV, and OR through the High Sierras and the Eastern Oregon desert.</p>
+<p>Especially recommended camping spots:</p>
+<ul>
+<li><a href="http://www.parks.ca.gov/?page_id=592"><strong>Montaña de Oro</strong></a> – near Morro Bay, CA. This one gets <em>packed</em>, so be sure to reserve ahead of time. We could have stayed here for a week.</li>
+<li><a href="http://www.parks.ca.gov/?page_id=631"><strong>Red Rock Canyon State Park</strong></a> – not the one in Nevada. This campground was stunning.</li>
+<li><a href="http://alltrails.com/trail/us/california/buckeye-hot-springs-ride"><strong>Buckeye Hot Springs</strong></a> – can&#39;t speak for the springs themselves (we were too beat to make the hike that night), but camping by the river was splendid.</li>
+</ul>
+<p>There&#39;s really nothing at all like driving through the expanse of the West Coast. You&#39;re driving through landscape riddled with contrast: the dry eastern slope butressed against rainforests to the west; flat sagebrush plains dotted with high buttes and mesas; roiling, unchained mountain streams and calm, muzzled rivers. Each new scene presents you with a new question: the underlying tension between the &quot;settled&quot; folks and the &quot;pioneers&quot; (both in the city and without); the timely questions of drought and agricultural responsibility; the simultaneous heritage of Manifest Destiny and John Muir.</p>
+<p>Growing up in small-town Eastern Washington, I thought I had a pretty good perspective on the plight of Rural America. I&#39;ve had my fair share of sideways looks. I&#39;ve had to move to a bigger town for work, and I don&#39;t know when I&#39;ll be able to move back. The vast expanse of nothingness in Eastern California and Oregon, however, is quite remarkable. Small towns, full of people (by comparison to others), sometimes hundreds of miles from other towns the same size or smaller. Thousands of miles of road with just a scant handful of metropolitain areas – the whole expanse as good as forgotten to the rest of the country.</p>
+<p> on life. We made a very conscientious effort to unplug – turn off our cell phones (we didn&#39;t have reception for a good long stretch anyway), and experience the scenery and each other. The space that left in our minds was filled up by deeper conversations and some mild soul-searching. I couldn&#39;t really recommend it more.</p>
+<p><img class="instagram-photo" src="https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/1169195_934886869915768_1308652852_n.jpg" />
+<img class="instagram-photo-half" src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/sh0.08/e35/11266616_1652076658339926_1591777477_n.jpg" />
+<img class="instagram-photo-half" src="https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/10832247_1440449722930376_2105684304_n.jpg" /></p>
+]]></description><pubdate>Fri Aug 14 2015 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/great-west-coast-roadtrip-2015.html<guid ispermalink="true">/blog/great-west-coast-roadtrip-2015.html</guid></item><item><title>Humility</title><description> 
+<![CDATA[<p>For the record, I&#39;m still learning how to do this whole &quot;life&quot; thing.</p>
+<p>Recently, I made the really invigorating discovery that I can be a grade-A asshole while simultaneously thinking that I am <em>helping</em> those around me.</p>
+<p>In continuing to examine my assumptions, I&#39;ve started to see the &quot;black boxes&quot; in my thinking -- swaths of my perception that I&#39;m blind to. Sometimes, they exist because I have inaccurate data about a project that keeps me from seeing the reality of whats going on, but other times it&#39;s myself that I can&#39;t see, which keeps me from being in-tune with how my actions affect what I&#39;m doing or the people around me.</p>
+<p>Recently, I had one of those big black blind boxes planted directly over a particular relationship with a teammate. I was completely unable to see that I had done nothing to build trust with them, but was instead micromanaging their portion of the project, and making them feel disempowered to bring their expertise to the table. The surprising thing to me wasn&#39;t that I was basically managing the project very poorly -- I am very aware of my baby-level management skills -- what surprised me was that, yet again, I <em>couldn&#39;t see it</em>. It was only after my interactions were played back to me by another teammate that I saw how incredibly rude and arrogant I had been -- in what I thought was the best interest of the project.</p>
+<p>Black boxes are sneaky -- they don&#39;t show themselves on their own, until it&#39;s too late. I need to learn how to hold a mental candle up to everything I do, so that I can see, if not the actual wrong-ness of my actions, at least the black boxes themselves. If I can see the boxes, I&#39;ll be able to work backwards and find out what I&#39;m missing.</p>
+<p>But that&#39;s not the point.</p>
+<p>We all have black boxes in our minds. We all struggle to see how our actions affect others, how they affect projects we&#39;re working on, and how they affect our own selves. That&#39;s something I will always struggle with, and I hope I&#39;ll continue to make progress and get better at uncovering those boxes.</p>
+<p>The point is: what do you do once you&#39;ve found them? That&#39;s where <em>humility</em> becomes the most crucial thing of all.</p>
+<p>My actions towards my teammate were really wrong. I felt I was in the right, arguing for the betterment of the project at hand, but in the process, I <em>really hurt</em> someone by making them feel that they had nothing to contribute. I walked all over them in the interest of &quot;making things better&quot;. At the time, I didn&#39;t think that it would be possible to heal that relationship in a way that wouldn&#39;t leave a long, awkward aftertaste.</p>
+<p>After some wonderful soul-searching with another teammate, I was counseled to simply humbly make amends, let that feeling of asshole-being really sink in and sting, think of the situation from the other&#39;s perspective, and genuinely admit to being that asshole that I never wanted to be.</p>
+<p>Super simple, kindergarten human-being 101, there.</p>
+<p>All I can say is that genuine humility, without expectation of forgiveness or &quot;results&quot;, is miraculous. The amount of healing that can be had, both for your own being and for a relationship, by simply getting down and being vulnerable in your own shortcomings, is incredible. My teammate and I are on much better terms than we ever had been.</p>
+<p>By focusing on humility in my management and relationships, I hope I&#39;ll be able to more clearly see the black boxes. At this point, I&#39;m pretty confident that humility is the secret to the whole &quot;life&quot; thing.</p>
+<p>Go forth and be humble, folks.</p>
+]]></description><pubdate>Thu Oct 09 2014 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/humility.html<guid ispermalink="true">/blog/humility.html</guid></item><item><title>Challenging Assumptions</title><description> 
+<![CDATA[<p>Lately, I’ve been busy.</p>
+<p>I currently run <a href="http://mux.tc">MUX</a>, a local music venue in Richland Wa. We focus on regional and local independent music, producing between one and three shows a month. I’ve been learning a ton – not only about the music industry, booking, production, and promotion, but about myself.</p>
+<p>Assumptions are essential for effective life-living and thing-building. You can’t do any one thing without having <em>some</em> preconcieved idea about what you should do, or at least <em>how you should learn</em> to do that thing. However, assumptions are only healthy when they are constantly challenged in your own head.</p>
+<p>For example: most MUX shows don’t sell many presale tickets. We generally announce the show three weeks in advance, and offer cheaper presale tickets right away. One or two tickets will sell in the first two weeks, but the majority of the ticket sales will be in the last two days before the show. This is generally fine, aside from the fact that it’s difficult to figure out how many people will show up ahead of time.</p>
+<p>Two weeks ago, we put on an outdoor festival called TriFest, in connection with a local art/design/tech/entrepreneurship conference called <a href="http://triconf.com">TriConf</a>. Ten bands (all regional medium-sized bands) played over the two nights of TriConf. Two-day wristbands were $35 presale, $40 day of show, and TriConf attendees received free wristbands. Leading up to the festival, wristband sales looked much the same – one or two wristbands sold in the first two weeks of promotion, and a couple more in the last week.</p>
+<p>The first night of the show, almost nobody showed up. The attendees from TriConf trickled in and out, but a grand total of a dozen festival-goers made it out that night. It felt like an utter failure, and I didn’t know why.</p>
+<p>Later that night, I was taken aside by a good friend and fellow MUX teammate. He told me that he honestly felt that the ticket price had scared off a lot of folks, and that would account for the dissapointing turnout that night. This didn’t come as a shock to me – I had worried about the ticket price – but I realized that my unchallenged assumptions about ticket sale patterns had prevented me from seeing that the price was too high, and people weren’t going to come.</p>
+<p>There’s a good cliche out there: “you can’t know what you don’t know”. Assumptions work off the worst side of that – you <em>feel</em> that you have a grasp on whatever’s at hand, but left unchallenged, you’re completely blind to any potential problems that your assumptions don’t account for.</p>
+<p>I’m seeking to break down that wall for myself. I need to be able to see the holes in my assumptions and fill them with the information that is <em>already there</em>, waiting for me to ask the right questions to discover it.</p>
+<p>Here’s my plan.</p>
+<ul>
+<li>start asking myself “what if” questions to find parts of my projects that haven’t been considered, and then</li>
+<li>learn to find people who may have honest perspective on my projects and ask probing questions to gain that perspective myself.</li>
+<li>to learn to channel the “irrational” anxious feelings that come with new projects into constructive critiscism of my assumptions</li>
+<li>to document my failures and reference them often in relation to my current projects</li>
+</ul>
+<p>In the end, we made the second night of TriFest free to all, and promoted the crap out of it that day, thanks to feedback and ideas from another member of the MUX team. By personally asking people to invite all their friends, writing a blog post on the MUX site about why we made the second night free, and pushing it out on all the interwubs, 300 people came to that night’s show. That’s great, but had I been able to understand how people percieved the ticket pricing ahead of time, the whole weekend could have been packed out, and I could have been selling tickets at greater than $0.</p>
+<p>I’d crave your thoughts. How do you challenge your assumptions? Has hindsight enlightened your current planning process? What are some methods that you use to gain perspective when you are planning and executing your projects?</p>
+<p>&lt;3</p>
+]]></description><pubdate>Tue Jul 29 2014 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/challenging-assumptions.html<guid ispermalink="true">/blog/challenging-assumptions.html</guid></item><item><title>Thanksgiving</title><description> 
+<![CDATA[<blockquote>
+<p>“…And we pray, not for new<br>earth or heaven, but to be quiet<br>in heart, and in eye clear.<br>What we need is here.”</p>
+<blockquote>
+<p>– Wendell Berry</p>
+</blockquote>
+</blockquote>
+<p>We’re <a href="https://vimeo.com/52639927">really lucky bastards</a>. Here in the comfy bubble of the tech world, there’s practically no glass ceiling we won’t eventually smash through. I’ve been blessed with a <a href="http://andyet.com">company I can believe in</a>, amazing teammates, good health, and a wonderful place to live surrounded by pristine nature. I live a life filled with abundance, for which I am extremely grateful. If you ever catch me complaining, you have my permission to slap some sense into me.</p>
+<p>I firmly believe that we cannot afford to become complacent in our position, but to use it to do the greatest good we can in the short time we have. As such, I am setting a personal bar for myself this Thanksgiving by giving $200 to a different cause each month. Here’s the list I’ve got so far (If you know of a cause that you think should be on my list, please get <a href="/">in touch with me</a>):</p>
+<ul>
+<li>Nov: <a href="http://www.charitywater.org/">charity: water</a></li>
+<li>Dec: <a href="http://donate.worldvision.org/OA_HTML/xxwv2MicroLoan.jsp?go=micro&amp;">World Vision Micro Loan</a></li>
+<li>Jan: <a href="http://www.letsrespond.com/">Let’s Respond</a></li>
+<li>Feb: <a href="http://www.amazima.org/">Amazima</a></li>
+<li>Mar: <a href="http://www.doctorswithoutborders.org/">Doctors Without Borders</a></li>
+<li>Apr: <a href="http://www.notforsalecampaign.org/">Not For Sale</a></li>
+<li>May:</li>
+<li>Jun:</li>
+<li>Jul:</li>
+<li>Aug:</li>
+<li>Sep:</li>
+<li>Oct:</li>
+</ul>
+<p>I’d really like you to join me in this endeavor. If you do, please let me know, and I’ll link you from this post.</p>
+<p>Together, we can use our privileged position to do a little good in the world.</p>
+]]></description><pubdate>Wed Nov 27 2013 00:00:00 GMT-0800 (PST)</pubdate><link>/blog/thanksgiving.html<guid ispermalink="true">/blog/thanksgiving.html</guid></item><item><title>The Indieweb</title><description> 
+<![CDATA[<p>So, here it goes.</p>
+<p>A couple things happened at <a href="http://realtimeconf.com">Realtime Conf</a> that sparked my move to the #indieweb. One of them was a talk given by Amber Case called <a href="http://caseorganic.com/notes/2013/10/22/2/realtimeconf-indieweb-ownyourdata">“The Open Web and the Opportunity of Now”</a>. You need to simply sit down and watch it, but the tl;dr goes like “get out there, use what’s already been written, own your data, and build cool things”.</p>
+<p><iframe src="https://player.vimeo.com/video/77352414" width="100%" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/77352414">2013 Realtime Conf. - Amber Case</a> from <a href="https://vimeo.com/andyet">&amp;yet</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
+<p>As soon as I heard that talk, I knew I needed to sit down and finally get my online presence wrangled together, starting with my personal blog. My persona online has been growing and becoming more fragmented very rapidly, which, despite the convenience of all those accounts and services, still left me feeling unsettled and uneasy. So far I’ve:</p>
+<ul>
+<li>moved this blog off of tumblr</li>
+<li>quit facebook</li>
+<li>downloaded tons of data from many of my social sites, and</li>
+<li>figured out a plan for finally lassoing my persona into one place, <a href="http://ike.io">ike.io</a>.</li>
+</ul>
+<p>The second thing that started this ‘homesteading’ itch (have you watched the talk yet?), was more of a nagging zeitgeist feeling. I haven’t nailed it down, but I have this notion that we’re embarking on something big right now. I think we’d better buckle up.</p>
+]]></description><pubdate>Wed Oct 23 2013 00:00:00 GMT-0700 (PDT)</pubdate><link>/blog/indieweb.html<guid ispermalink="true">/blog/indieweb.html</guid></item></channel></rss></body><script>hljs.configure({languages: []})
+hljs.initHighlightingOnLoad();
+var x = document.querySelectorAll("code");
+var i;
+for (i = 0; i < x.length; i++) {
+    hljs.highlightBlock(x[i]);
+}</script></html>

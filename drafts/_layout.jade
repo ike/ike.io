@@ -26,7 +26,6 @@ html
       pre.post-title= date
       != yield
     script
-    | hljs.configure({languages: []})
     | hljs.initHighlightingOnLoad();
     | var x = document.querySelectorAll("code");
     | var i;
