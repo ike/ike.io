@@ -1,42 +1,49 @@
-baseurl = "https://www.example.com"
-languageCode = "en"
-title = "Isaac Lewis"
-theme = "kiss"
-copyright = "&copy; <a href=\"https://github.com/ike\">Isaac Lewis</a> 2007-2018"
-disqusShortname = ""
-googleAnalytics = ""
-# Number of posts per page
-Paginate = 10
-enableRobotsTXT = true
+theme = "coder" # set the theme
+title = "ike.io"
 
-[params.assets]
-customCSS = ["css/custom.css"]
+languagecode = "en"
 
-[params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = false # Adds OpenGraph and Twitter cards
-homeTitle = "Ike's Internet Homestead" # Title for home page
-poweredby = false # Adds powered by Hugo and Kiss below Copyright section
+paginate = 20
+canonifyurls = true
 
-[params.opengraph.facebook]
-admins = [] # array of Facebook IDs
-appID = ""
-pageID = ""
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
-[params.opengraph.twitter]
-page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+[permalinks] # configure post and fixed pages permalinks
+post = "blog/:title/"
+default = ":title/"
 
-[params.social]
-twitter = "_crossdiver"
-github = "ike"
-email = "isaac@ike.io"
-linkedin = "isaac-lewis-b16775a5"
-facebook = ""
-instagram = "crossdiver"
-codepen = ""
+[params] # theme parameters
+author = "Isaac Lewis" # author's name
+info = "Senior Full Stack Developer, Professional Dilletante" # author's job title or info
+description = "Isaac Lewis's personal website" # site description
+keywords = "blog,developer,personal" # site keywords
 
-[taxonomies]
-tag ="tags"
+# Social links
+[[params.social]]
+name = "Github"
+weight = 1
+url = "https://github.com/ike/"
+[[params.social]]
+name = "Twitter"
+weight = 2
+url = "https://twitter.com/_crossdiver/"
+[[params.social]]
+name = "LinkedIn"
+weight = 3
+url = "https://www.linkedin.com/in/isaac-lewis-b16775a5/"
 
-[blackfriday]
-hrefTargetBlank = true
+# Menu links
+[[menu.main]]
+name = "Blog"
+weight = 1
+url  = "/blog/"
+[[menu.main]]
+name = "About"
+weight = 2
+url = "/about/"
+[[menu.main]]
+name = "Quotes"
+weight = 3
+url = "/quotes/"
