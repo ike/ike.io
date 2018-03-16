@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Isaac Lewis</title>
-    <link>https://www.example.com/</link>
-    <description>Recent content on Isaac Lewis</description>
+    <title>ike.io</title>
+    <link>/</link>
+    <description>Recent content on ike.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/ike&#34;&gt;Isaac Lewis&lt;/a&gt; 2007-2018</copyright>
+    <lastBuildDate>Sun, 11 Mar 2018 16:58:26 -0700</lastBuildDate>
     
-	<atom:link href="https://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>When Despair Grows in Me</title>
+      <link>/quotes/when-despair-grows-in-me/</link>
+      <pubDate>Sun, 11 Mar 2018 16:58:26 -0700</pubDate>
+      
+      <guid>/quotes/when-despair-grows-in-me/</guid>
+      <description>&amp;ldquo;When despair for the world grows in me and I wake in the night at the least sound in fear of what my life and my children&amp;rsquo;s lives may be, I go and lie down where the wood drake rests in his beauty on the water, and the great heron feeds. I come into the peace of wild things who do not tax their lives with forethought of grief. I come into the presence of still water.</description>
+    </item>
+    
+    <item>
+      <title>Work Like a Slave</title>
+      <link>/quotes/work-like-a-slave/</link>
+      <pubDate>Sun, 11 Mar 2018 16:06:08 -0700</pubDate>
+      
+      <guid>/quotes/work-like-a-slave/</guid>
+      <description> &amp;ldquo;Work like a slave; command like a king; create like a god.&amp;rdquo;
+ </description>
+    </item>
     
   </channel>
 </rss>

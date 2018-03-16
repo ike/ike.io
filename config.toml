@@ -6,12 +6,12 @@ languagecode = "en"
 paginate = 20
 canonifyurls = true
 
-pygmentsstyle = "b2"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
 
 [permalinks] # configure post and fixed pages permalinks
-post = "blog/:title/"
+post = "post/:title/"
 default = ":title/"
 
 [params] # theme parameters
@@ -38,7 +38,7 @@ url = "https://www.linkedin.com/in/isaac-lewis-b16775a5/"
 [[menu.main]]
 name = "Blog"
 weight = 1
-url  = "/blog/"
+url  = "/posts/"
 [[menu.main]]
 name = "About"
 weight = 2

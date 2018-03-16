@@ -1,3 +1,18 @@
+body {
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    text-transform: none;
+    letter-spacing: .0625em;
+    margin: 3.2rem 0 1.6rem 0;
+}
+
 .quote {
   padding-bottom: 60px;
+}
+
+.quote-li-attr {
+  padding-left: 40px;
 }

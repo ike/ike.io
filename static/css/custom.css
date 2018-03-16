@@ -1,3 +1,63 @@
+body {
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+.navigation {
+  margin-top: 1.6rem;
+}
+
+.navigation a {
+  text-transform: none;
+}
+
+.about {
+  padding-top: 10rem;
+}
+
+.bio-body img.avatar {
+  border-style: none;
+  width: 150px;
+  float: left;
+  display: inline;
+  margin-right: 1.3rem;
+  padding-bottom: 20px;
+}
+
+.work {
+  clear: both;
+  text-align: center;
+}
+
+.work h2 {
+  text-align: left;
+}
+
+img.logo {
+  max-width: 200px;
+  max-height: 75px;
+  display: inline-block;
+  margin: 25px;
+  vertical-align: top;
+}
+
+
+.home-splash {
+  background-image: url("/img/columbia.jpg");
+  background-size: cover;
+  height: 700px;
+}
+
+.home {
+  align-items: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    text-transform: none;
+    letter-spacing: .0625em;
+    margin: 3.2rem 0 1.6rem 0;
+}
+
 .quote {
   padding-bottom: 60px;
 }
