@@ -1,4 +1,16 @@
 {{ define "content" }}
   {{ partial "home.html" . }}
-  {{ partial "about.html" . }}
+  <section class="home-about">
+    {{ partial "about.html" . }}
+    {{ partial "work.html" . }}
+  </section>
+  <section class="container page posts-title">
+    <h1>Recent Posts:</h1>
+  </section>
+  {{ range first 5 (where .Site.Pages "Section" "posts") }}
+    {{ .Render "full" }}
+  {{ end }}
+  <section class="container page read-more">
+    <a href="/posts">Read more...</a>
+  </section>
 {{ end }}

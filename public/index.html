@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/syntax.css">
 
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
@@ -40,7 +41,7 @@
     <ul class="navigation-list float-right">
       
       <li class="navigation-item">
-        <a class="navigation-link" href="/blog/">Blog</a>
+        <a class="navigation-link" href="/posts/">Blog</a>
       </li>
       
       <li class="navigation-item">
@@ -58,22 +59,97 @@
 
       <div class="content">
         
-  <section class="container centered">
-  <div class="about">
-    <h1>Isaac Lewis</h1>
-    <h2>Senior Full Stack Developer, Professional Dilletante</h2>
-    <ul>
-      
-      <li><a href="https://github.com/ike/">Github</a></li>
-      
-      <li><a href="https://twitter.com/_crossdiver/">Twitter</a></li>
-      
-      <li><a href="https://www.linkedin.com/in/isaac-lewis-b16775a5/">LinkedIn</a></li>
-      
-    </ul>
+  <div class="home-splash">
+  <section class="home container centered">
+    <div class="about">
+      <h1>Isaac Lewis</h1>
+      <h2 id="home-roles-info"></h2>
+      <ul>
+        <li><a href="https://github.com/ike/">github</a></li>
+        <li><a href="https://twitter.com/_crossdiver/">twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/isaac-lewis-b16775a5/">linkedin</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+<script>
+  let elRoles = document.getElementById("home-roles-info");
+  const roles = [
+    "Full-stack Developer",
+    "Dev-ops Automation Engineer",
+    "Product Strategist",
+    "Market Research Analyst",
+    "Fisherman",
+    "Hiker",
+    "Wooden Boat Builder",
+    "Vocalist",
+    "Cyclist",
+    "Map Junkie",
+    "Naturalist",
+    "Avid Reader",
+    "Project Manager",
+    "Autodidact",
+    "Radio Engineer",
+    "Incident Responder"
+  ];
+
+  let i = 0;
+  let changeInterval = setInterval(changeRole, 3000);
+
+  function changeRole() {
+    elRoles.innerHTML = roles[i];
+    i++;
+    if (i >= roles.length) i = 0;
+  }
+
+  function roleClick() {
+    clearInterval(changeInterval);
+    changeRole();
+    changeInterval = setInterval(changeRole, 3000);
+  }
+
+  elRoles.addEventListener("click", roleClick);
+
+  changeRole();
+
+</script>
+
+
+  <section class="home-about">
+    <section class="bio container page">
+  <header>
+    <h1>Hi there! Glad to meet you.</h1>
+  </header>
+  <div class="bio-body">
+    <img src="/img/headshot-square.jpg" class="avatar"/>
+    <p>I've been building things on the internet for more than a decade. I am fascinated by the way technology either helps or hinders ordinary people from solving real problems they face. I am especially interested in small communities and how they use technology to tell their own stories and make their communities stronger. I would love to hear about your project – let's chat!</p>
   </div>
 </section>
 
+    <section class="work container page">
+  <h2>Folks I've Worked With</h2>
+  <img class=logo src="/img/logos/att.png" />
+  <img class=logo src="/img/logos/caa.png" />
+  <img class=logo src="/img/logos/cgcc.png" />
+  
+  <img class=logo src="/img/logos/dw2.png" />
+  <img class=logo src="/img/logos/flatiron.png" />
+  
+  <img class=logo src="/img/logos/microsoft.png" />
+  <img class=logo src="/img/logos/npm.png" />
+  <img class=logo src="/img/logos/walmart.png" />
+  <img class=logo src="/img/logos/wildland.png" />
+  <img class=logo src="/img/logos/yet.png" />
+</section>
+
+  </section>
+  <section class="container page posts-title">
+    <h1>Recent Posts:</h1>
+  </section>
+  
+  <section class="container page read-more">
+    <a href="/posts">Read more...</a>
+  </section>
 
       </div>
 

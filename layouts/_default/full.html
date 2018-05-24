@@ -1,0 +1,12 @@
+<section class="container full page">
+  <article>
+    <header>
+      <a href="{{ .URL }}"><h1>{{ .Title }}</h1></a>
+    </header>
+
+    {{ .Summary }}
+    <br/>
+    <small>&#8212;</small><br/>
+    <small class="full-footer">Posted by {{ .Site.Params.author }} on {{ .Date.Format "Mon, Jan 2, 2006" }}</small>
+  </article>
+</section>

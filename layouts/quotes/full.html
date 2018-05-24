@@ -1,0 +1,9 @@
+<section class="container full quote">
+  <article>
+    <span><a href="{{ .URL }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</a></span>
+    {{ .Content }}
+    <div class="quote-li-attr">
+      <b>-- {{ .Params.spokenBy }}</b>
+    </div>
+  </article>
+</section>

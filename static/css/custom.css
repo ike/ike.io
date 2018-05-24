@@ -2,6 +2,41 @@ body {
   font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 
+.container {
+  clear: both;
+  display: flow-root;
+}
+
+.home-about {
+  background-color: aliceblue;
+  border-bottom: 1px black dotted;
+}
+
+#home-roles-info {
+  cursor: pointer;
+}
+
+.centered .about ul {
+  margin: 5rem 0 1rem 0;
+}
+
+.centered .about ul li a {
+  text-transform: none;
+}
+
+.full {
+  padding-bottom: 60px;
+}
+
+.full h1 {
+  border-bottom: 1px black solid;
+  height: 29px;
+}
+
+.full h1:hover {
+  border-bottom: 4px black solid;
+}
+
 .navigation {
   margin-top: 1.6rem;
 }
@@ -24,7 +59,6 @@ body {
 }
 
 .work {
-  clear: both;
   text-align: center;
 }
 
@@ -42,7 +76,8 @@ img.logo {
 
 
 .home-splash {
-  background-image: url("/img/columbia.jpg");
+  background-image: url("/img/columbia-header.jpg");
+  background-position: center top;
   background-size: cover;
   height: 700px;
 }

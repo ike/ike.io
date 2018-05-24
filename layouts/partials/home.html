@@ -2,12 +2,54 @@
   <section class="home container centered">
     <div class="about">
       <h1>{{ .Site.Params.author }}</h1>
-      <h2>{{ .Site.Params.info }}</h2>
+      <h2 id="home-roles-info"></h2>
       <ul>
-        {{ range sort .Site.Params.social }}
-        <li><a href="{{ .url }}">{{ .name }}</a></li>
-        {{ end }}
+        <li><a href="https://github.com/ike/">github</a></li>
+        <li><a href="https://twitter.com/_crossdiver/">twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/isaac-lewis-b16775a5/">linkedin</a></li>
       </ul>
     </div>
   </section>
 </div>
+<script>
+  let elRoles = document.getElementById("home-roles-info");
+  const roles = [
+    "Full-stack Developer",
+    "Dev-ops Automation Engineer",
+    "Product Strategist",
+    "Market Research Analyst",
+    "Fisherman",
+    "Hiker",
+    "Wooden Boat Builder",
+    "Vocalist",
+    "Cyclist",
+    "Map Junkie",
+    "Naturalist",
+    "Avid Reader",
+    "Project Manager",
+    "Autodidact",
+    "Radio Engineer",
+    "Incident Responder"
+  ];
+
+  let i = 0;
+  let changeInterval = setInterval(changeRole, 3000);
+
+  function changeRole() {
+    elRoles.innerHTML = roles[i];
+    i++;
+    if (i >= roles.length) i = 0;
+  }
+
+  function roleClick() {
+    clearInterval(changeInterval);
+    changeRole();
+    changeInterval = setInterval(changeRole, 3000);
+  }
+
+  elRoles.addEventListener("click", roleClick);
+
+  changeRole();
+
+</script>
+

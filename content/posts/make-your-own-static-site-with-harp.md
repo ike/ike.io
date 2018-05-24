@@ -5,6 +5,7 @@ draft: true
 ---
 
 The web has become [really complicated](http://eev.ee/blog/2015/09/17/the-sad-state-of-web-app-deployment/). It takes so much time, so much frustration, and so much specialized knowledge to set up a new site, blog, forum, or chatroom that many internet citizens no longer build independent experiences. It's become so simple to join an existing silo ([tumblr](http://tumblr.com), [wordpress](https://wordpress.com/), [disqus](https://disqus.com/), [discourse](http://www.discourse.org/)) that we're not as likely to consider the idea of building something that's simple, clear, and completely ours.
+<!--more-->
 
 I've been [involved in indieweb stuff for a while now](/blog/indieweb.html). The Indieweb is the idea that you can (and should) own your own internet persona – the data that you create online should live, primarily, on your own internet "homestead". The problem is that for a long time, the internet hasn't had tools that made that easy for folks who don't have Ops Chops.
 
@@ -91,7 +92,7 @@ This will compile your static site into HTML, CSS, and JS in the `www` directory
 
 Now, to deploy my site to Neocities, I just open that `www` directory in my finder, and:
 
-![Deploying to Neocities](img/deploy-to-neocities.gif)
+![Deploying to Neocities](/posts/images/deploy-to-neocities.gif)
 
 Deploying to Neocities is as easy as Drag'n'Drop™.
 

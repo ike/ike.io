@@ -11,12 +11,12 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 
 [permalinks] # configure post and fixed pages permalinks
-post = "post/:title/"
+post = "posts/:title/"
 default = ":title/"
 
 [params] # theme parameters
 author = "Isaac Lewis" # author's name
-info = "Senior Full Stack Developer, Professional Dilletante" # author's job title or info
+info = "Developer, strategist, explorer" # author's job title or info
 description = "Isaac Lewis's personal website" # site description
 keywords = "blog,developer,personal" # site keywords
 
